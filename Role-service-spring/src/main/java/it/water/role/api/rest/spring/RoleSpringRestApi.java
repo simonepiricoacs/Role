@@ -43,11 +43,12 @@ public interface RoleSpringRestApi extends RoleRestApi {
 
     @PostMapping("/assign")
     @JsonView(WaterJsonView.Public.class)
-    void assignRole(long userId, long roleId);
+    void assignRole(@RequestParam("userId") long userId, @RequestParam("roleId") long roleId);
 
     @PostMapping("/unassign")
     @JsonView(WaterJsonView.Public.class)
-    void unassignRole(long userId, long roleId);
+    void unassignRole(@RequestParam("userId") long userId, @RequestParam("roleId") long roleId);
+
 
     @GetMapping("/{id}")
     @JsonView(WaterJsonView.Public.class)
