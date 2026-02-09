@@ -23,7 +23,7 @@ import javax.ws.rs.core.MediaType;
 @FrameworkRestApi
 public interface RoleRestApi extends RestApi {
 
-   
+
     @LoggedIn
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,7 +53,7 @@ public interface RoleRestApi extends RestApi {
             @ApiResponse(code = 422, message = "Duplicated Entity"),
             @ApiResponse(code = 500, message = "Internal server error")
     })
-    void assignRole(long userId,long roleId);
+    void assignRole(@FormParam("userId") long userId, @FormParam("roleId") long roleId);
 
     @LoggedIn
     @Path("/unassign")
@@ -69,7 +69,7 @@ public interface RoleRestApi extends RestApi {
             @ApiResponse(code = 422, message = "Duplicated Entity"),
             @ApiResponse(code = 500, message = "Internal server error")
     })
-    void unassignRole(long userId,long roleId);
+    void unassignRole(@FormParam("userId") long userId, @FormParam("roleId") long roleId);
 
     @LoggedIn
     @PUT
