@@ -21,7 +21,9 @@ Feature: Check Role Rest Api Response
         "entityVersion":1,
         "entityCreateDate":'#number',
         "entityModifyDate":'#number',
-        "description": "role"
+        "description": "role",
+        "categoryIds": #null,
+        "tagIds": #null
        }
     """
     * def entityId = response.id
@@ -44,10 +46,12 @@ Feature: Check Role Rest Api Response
         "entityCreateDate":'#number',
         "entityModifyDate":'#number',
         "name": "nameUpdated",
-        "description":"description"
+        "description":"description",
+        "categoryIds": #null,
+        "tagIds": #null
        }
     """
-  
+
   # --------------- FIND -----------------------------
 
     Given header Content-Type = 'application/json'
@@ -64,10 +68,12 @@ Feature: Check Role Rest Api Response
         "entityCreateDate":'#number',
         "entityModifyDate":'#number',
         "name": 'nameUpdated',
-        "description":"description"
+        "description":"description",
+        "categoryIds": #null,
+        "tagIds": #null
        }
     """
-    
+
   # --------------- FIND ALL -----------------------------
 
     Given header Content-Type = 'application/json'
@@ -83,10 +89,12 @@ Feature: Check Role Rest Api Response
       "entityCreateDate":'#number',
       "entityModifyDate":'#number',
       "name": 'nameUpdated',
-      "description":"description"
+      "description":"description",
+      "categoryIds": #null,
+      "tagIds": #null
     }
     """
-  
+
   # --------------- DELETE -----------------------------
 
     Given header Content-Type = 'application/json'
