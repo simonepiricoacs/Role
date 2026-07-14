@@ -11,6 +11,8 @@ dependencies {
 	implementation group:'jakarta.validation', name:'jakarta.validation-api', version: project.jakartaValidationVersion
 	//Core Water Deps
 	implementation group: 'it.water.distribution', name: 'Water-distribution-spring', version: project.waterVersion
+	//needed for the tenant marker (TenantResource) inherited by WaterRole via AbstractJpaTenantEntity
+	implementation group: 'it.water.core', name: 'Core-api', version: project.waterVersion
 	// JPA Repository
 	implementation 'it.water.repository.jpa:JpaRepository-spring:'+project.waterVersion
 	//hibernate validator

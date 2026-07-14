@@ -10,7 +10,7 @@ import it.water.core.permission.annotations.AccessControl;
 import it.water.core.permission.annotations.DefaultRoleAccess;
 import it.water.core.validation.annotations.NoMalitiusCode;
 import it.water.core.validation.annotations.NotNullOnPersist;
-import it.water.repository.jpa.model.AbstractJpaEntity;
+import it.water.repository.jpa.model.AbstractJpaTenantEntity;
 import it.water.role.actions.RoleActions;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -43,7 +43,11 @@ import lombok.*;
                 //Editor can do anything but remove
                 @DefaultRoleAccess(roleName = WaterRole.DEFAULT_EDITOR_ROLE, actions = {CrudActions.SAVE, CrudActions.UPDATE, CrudActions.FIND, CrudActions.FIND_ALL, RoleActions.ASSIGN, RoleActions.UNASSIGN})
         })
-public class WaterRole extends AbstractJpaEntity implements Role, ProtectedEntity {
+// WaterRole is now a TenantResource (via AbstractJpaTenantEntity): it carries a nullable, opaque
+// companyId column. companyId == null means a GLOBAL role visible to every tenant; a non-null value
+// scopes the role to that company. This only tenant-scopes the role ENTITY listing (global roles +
+// active-company roles); per-tenant role ASSIGNMENT (WaterUserRole) is a separate deferred tassello.
+public class WaterRole extends AbstractJpaTenantEntity implements Role, ProtectedEntity {
 
     public static final String DEFAULT_MANAGER_ROLE = "roleManager";
     public static final String DEFAULT_VIEWER_ROLE = "roleViewer";
