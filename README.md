@@ -189,7 +189,7 @@ Roles are tenant-aware.
 - `WaterRole extends AbstractJpaTenantEntity` → carries a nullable `companyId`: **null = global role** (visible in every tenant), a value = a role scoped to that company.
 - Note (deferred): per-tenant role ASSIGNMENT (`WaterUserRole` `companyId` dimension) and company-aware role resolution in the JWT are NOT yet implemented.
 
-Deferred: company-aware role assignment/resolution and granular per-entity opt-out (see `multitenancy-analysis-proposal.md`).
+Deferred: company-aware role assignment/resolution and granular per-entity opt-out (see the `multitenancy-knowledge` skill).
 
 ## Testing
 

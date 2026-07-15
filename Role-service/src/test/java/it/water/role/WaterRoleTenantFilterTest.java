@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 /**
  * Multitenancy "Tassello 4" — behavioral enforcement tests for the tenant filter on
  * {@code WaterRole}, a {@code TenantResource} (single company, nullable {@code companyId} = global
- * role visible to every tenant). See {@code multitenancy-analysis-proposal.md} &sect;1/&sect;6.
+ * role visible to every tenant). See {@code the `multitenancy-knowledge` skill} &sect;1/&sect;6.
  * <p>
  * Covers:
  * <ul>
