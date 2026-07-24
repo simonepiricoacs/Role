@@ -20,9 +20,10 @@ dependencies {
 	//Rest Modules
 	implementation group: 'it.water.service.rest', name: 'Rest-spring-api', version: project.waterVersion
 
-	implementation project (":Role-api")
-	implementation project (":Role-model")
-	implementation project (":Role-service")
+	// Package the complete deployable Water capability in the Spring runtime JAR.
+	implementationInclude project (":Role-api")
+	implementationInclude project (":Role-model")
+	implementationInclude project (":Role-service")
 
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:'+project.springOpenApiWebMvcVersion
 	//Jackson Json Views

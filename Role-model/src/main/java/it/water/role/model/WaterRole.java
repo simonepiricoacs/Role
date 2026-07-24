@@ -24,7 +24,7 @@ import lombok.*;
  */
 //JPA
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name","companyId"}))
 @Access(AccessType.FIELD)
 //Lombok
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
